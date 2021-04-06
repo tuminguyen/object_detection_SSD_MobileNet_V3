@@ -30,7 +30,6 @@ python main.py --img test.jpg
 
 # or using -i image_path
 python main.py -i test.jpg
-
 ```
 
 _Detect on stream_
@@ -49,7 +48,6 @@ python main.py --incl mouse keyboard cup
 
 # Or
 python main.py -incl mouse keyboard cup
-
 ```
 
 _Set detection threshold_
@@ -59,7 +57,6 @@ python  main.py --thresh 0.55
 
 # Or 
 python main.py -t 0.55
-
 ```
 
 You can find other pretrained models from [here](https://github.com/opencv/opencv/wiki/TensorFlow-Object-Detection-API)
