@@ -27,3 +27,5 @@ python main.py --incl object_name1 object_name_n
 # Example:
 python main.py --incl mouse keyboard cup
 ```
+
+You can find other pretrained models from [here](https://github.com/opencv/opencv/wiki/TensorFlow-Object-Detection-API)
