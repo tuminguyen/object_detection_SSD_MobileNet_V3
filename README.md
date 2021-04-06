@@ -2,6 +2,8 @@
 
 This repo using pretrained model from SSD_MobileNet_V3, which is train on COCO dataset.
 
+![demo-video2gif](demo.gif)
+
 
 ## Usage
 
