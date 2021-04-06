@@ -9,7 +9,7 @@ _Detect on single image_
 ```
 python main.py  --img image_path
 
-Example:
+# Example:
 python main.py --img test.jpg
 ```
 
@@ -23,6 +23,7 @@ or
 ```
 # Using specific interested objects
 python main.py --incl object_name1 object_name_n
-Example:
+
+# Example:
 python main.py --incl mouse keyboard cup
 ```
