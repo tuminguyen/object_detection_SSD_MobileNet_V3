@@ -15,16 +15,18 @@ net.setInputSwapRB(True)
 
 def init_parse():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--img', type=str,
-                        help='image path')
-    parser.add_argument('--incl', nargs='+',
+    parser.add_argument('--img', '-i',
+                        type=str, help='image path')
+    parser.add_argument('--thresh', '-t', default=0.6,
+                        type=float, help='image path')
+    parser.add_argument('--incl', '-incl', nargs='+',
                         help='list of interested objects, all lowercase')
     args = parser.parse_args()
     return vars(args)
 
 
-def detect(img, interested=[]):
-    classes, confidences, boxes = net.detect(img, confThreshold=THRESHOLD, nmsThreshold=0.05)
+def detect(img, interested=[], thresh=0.6):
+    classes, confidences, boxes = net.detect(img, confThreshold=thresh, nmsThreshold=0.05)
     if interested is None:
         interested = objects
     if len(classes):
@@ -49,13 +51,13 @@ if __name__ == '__main__':
             ret, frame = cap.read()
             if not ret:
                 break
-            detected_img = detect(img=frame, interested=arguments['incl'])
+            detected_img = detect(img=frame, interested=arguments['incl'], thresh=arguments['thresh'])
             cv2.imshow('out', detected_img)
             k = cv2.waitKey(33)
             if k == 27:  # press ESC
                 break
     else:
         frame = cv2.imread(arguments['img'])
-        detected_img = detect(img=frame, interested=arguments['incl'])
+        detected_img = detect(img=frame, interested=arguments['incl'], thresh=arguments['thresh'])
         cv2.imshow('out', detected_img)
         cv2.waitKey(1000)
