@@ -14,7 +14,7 @@ _Argurments parser_
     description='image path'
 '--thresh', '-t': 
     type=float
-    description='image path'
+    description='detection confidence threshold'
     default=0.6
 '--incl', '-incl':
     description='list of interested objects, all lowercase'
