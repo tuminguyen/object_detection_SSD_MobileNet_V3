@@ -42,13 +42,14 @@ def detect(img, interested=[], thresh=0.6):
 
 
 if __name__ == '__main__':
-    cap = cv2.VideoCapture(0)
+    cap = cv2.VideoCapture('/dev/video2')  # video2: usb cam / video0: laptop cam
     cap.set(3, 640)
     cap.set(4, 480)
     arguments = init_parse()
     if arguments['img'] is None or arguments['img'] == '':
         while True:
             ret, frame = cap.read()
+            print(cap.get(cv2.CAP_PROP_FPS))
             if not ret:
                 break
             detected_img = detect(img=frame, interested=arguments['incl'], thresh=arguments['thresh'])
