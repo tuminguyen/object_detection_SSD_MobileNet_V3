@@ -1,9 +1,10 @@
 # Object dection with SSD_MobileNet_V3
 
-This repo using pretrained model from SSD_MobileNet_V3, which is train on COCO dataset.
+This repo using pretrained model from SSD_MobileNet_V3, which is trained on COCO dataset. 
 
 ![demo-video2gif](demo.gif)
 
+The code has been tested on Ubuntu 20.04 and Raspberry Pi 4 2GB.
 
 ## Requirements
 - Python 3+
