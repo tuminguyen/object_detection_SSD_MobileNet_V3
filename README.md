@@ -5,6 +5,13 @@ This repo using pretrained model from SSD_MobileNet_V3, which is train on COCO d
 ![demo-video2gif](demo.gif)
 
 
+## Requirements
+- Python 3+
+- OpenCV
+```
+pip install opencv-python
+```
+
 ## Usage
 
 _Argurments parser_
