@@ -26,6 +26,12 @@ _Argurments parser_
     default=0.6
 '--incl', '-incl':
     description='list of interested objects, all lowercase'
+'--dump', '-d':
+    description='set it to True if you want to dump the detect log to file'
+    default=False
+'--rate', '-r':
+    description:'Call detect after this number of frames'
+    default: 1
 ```
 
 _Detect on single image_
@@ -65,6 +71,12 @@ python  main.py --thresh 0.55
 
 # Or 
 python main.py -t 0.55
+```
+
+_Dump detect log to file_
+```
+# Example: detect person only, dump to file (default: log.json). Detect rate: 3 times/s
+python main.py -incl person -d True -r 10
 ```
 
 You can find other pretrained models from [here](https://github.com/opencv/opencv/wiki/TensorFlow-Object-Detection-API)
