@@ -68,7 +68,8 @@ def detect(img, interested=[], thresh=0.6):
                 cv2.putText(img, label, (box[0] + 10, box[1] + 30), cv2.FONT_HERSHEY_COMPLEX, 0.65, (0, 255, 255), 2)
                 cv2.putText(img, str(round(confidence * 100, 2)), (box[0] + 175, box[1] + 30),
                             cv2.FONT_HERSHEY_COMPLEX, 0.65, (0, 255, 0), 2)
-    return img
+
+                return img
 
 
 if __name__ == '__main__':
@@ -88,8 +89,9 @@ if __name__ == '__main__':
                 if frameCount % arguments['rate'] == 0:  # detect on every [rate] frames => 30/rate times per second
                     detected = detect(img=frame, interested=arguments['incl'], thresh=arguments['thresh'])
                     if arguments['dump']:
-                        json.dump(detected, f_out, default=my_converter)
-                        f_out.write("\n")
+                        if detected is not None:
+                            json.dump(detected, f_out, default=my_converter)
+                            f_out.write("\n")
                     else:
                         cv2.imshow('out', detected)
                         k = cv2.waitKey(33)
