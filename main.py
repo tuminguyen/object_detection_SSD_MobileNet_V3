@@ -80,7 +80,7 @@ if __name__ == '__main__':
     fps = cap.get(cv2.CAP_PROP_FPS)  # fps = 30
     frameCount = 0
     if arguments['img'] is None or arguments['img'] == '':
-        with open("log.json", 'w') as f_out:
+        with open("log.json", 'a+') as f_out:
             while True:
                 frameCount += 1
                 ret, frame = cap.read()
