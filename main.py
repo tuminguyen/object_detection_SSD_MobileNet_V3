@@ -62,6 +62,7 @@ def detect(img, interested=[], thresh=0.6):
                     doc = {"date": date.today(),
                            "time": datetime.strptime(datetime.now().strftime('%Y-%m-%d %H:%M:%S'), '%Y-%m-%d %H:%M:%S'),
                            "object": label,
+                           "count": len(classes),
                            "confidence": confidence}
                     return doc
                 cv2.rectangle(img, box, color=(0, 255, 255))
