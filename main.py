@@ -89,12 +89,16 @@ if __name__ == '__main__':
                     break
                 if frameCount % arguments['rate'] == 0:  # detect on every [rate] frames => 30/rate times per second
                     detected = detect(img=frame, interested=arguments['incl'], thresh=arguments['thresh'])
+                    print(detected)
                     if arguments['dump']:
                         if detected is not None:
                             json.dump(detected, f_out, default=my_converter)
                             f_out.write("\n")
                     else:
-                        cv2.imshow('out', detected)
+                        if detected is not None:
+                            cv2.imshow('out', detected)
+                        else:
+                            cv2.imshow('out', frame)
                         k = cv2.waitKey(33)
                         if k == 27:  # press ESC
                             break
