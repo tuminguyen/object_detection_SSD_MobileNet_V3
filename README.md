@@ -22,7 +22,7 @@ _Argurments parser_
     description='image path'
 '--thresh', '-t': 
     type=float
-    description='detection confidence threshold'
+    description='detection confident threshold'
     default=0.6
 '--incl', '-incl':
     description='list of interested objects, all lowercase'

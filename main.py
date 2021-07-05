@@ -21,7 +21,7 @@ def init_parse():
     parser.add_argument('--img', '-i',
                         type=str, help='image path')
     parser.add_argument('--thresh', '-t', default=0.6,
-                        type=float, help='image path')
+                        type=float, help='confident threshold')
     parser.add_argument('--incl', '-incl', nargs='+',
                         help='list of interested objects, all lowercase')
     parser.add_argument('--dump', '-d', type=bool, default=False,
@@ -74,7 +74,7 @@ def detect(img, interested=[], thresh=0.6):
 
 
 if __name__ == '__main__':
-    cap = cv2.VideoCapture('/dev/video0')  # video2: usb cam / video0: laptop cam
+    cap = cv2.VideoCapture('/dev/video0')  # video2: usb cam / video0: laptop cam or pi cam
     cap.set(3, 640)
     cap.set(4, 480)
     arguments = init_parse()
