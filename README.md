@@ -4,7 +4,7 @@ This repo using pretrained model from SSD_MobileNet_V3, which is trained on COCO
 
 ![demo-video2gif](demo.gif)
 
-The code has been tested on Ubuntu 20.04 and Raspberry Pi 4 2GB.
+The code has been tested on Ubuntu 20.04 and Raspberry Pi 4 2GB _(picamera might faster than opencv)_.
 
 ## Requirements
 - Python 3+
